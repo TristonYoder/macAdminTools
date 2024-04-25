@@ -1,4 +1,14 @@
 #!/bin/bash
+
+## DEPRECATION NOTICE ##
+# Note: Apple's new generic "Macxx,xx" Model ID scheme made this script way more annoying to update
+# So instead I made replacements EAs that don't require manual updating!
+# See my post https://www.brunerd.com/blog/2022/12/09/determining-eligible-macos-versions-via-script/ 
+# They live here: https://github.com/brunerd/macAdminTools/edit/main/Jamf/EAs
+# One that uses Apple Software Update Service (ASLS) and another that uses Software Update - take your pick
+# Both methods will only "see" new macOS on day it released and thereafter, there is no "forecasting" ability
+## DEPRECATION NOTICE ##
+
 : <<-LICENSE_BLOCK
 macOSCompatibility (20221010) - a Jamf EA to report macOS compatibility with alternate output modes for TEXT or CSV output
 Copyright (c) 2020 Joel Bruner (https://github.com/brunerd)
@@ -26,8 +36,6 @@ For Maximum Fun: Create a CSV with all models and all versions.
 QuickLook can view CSV if you don't have Numbers installed
 
 ./macOSCompatibility.sh -c -v ALL ALL > ~/Desktop/macOSCompatibilityMatrix.csv
-
-
 USAGE
 
 #hold shoft down for xtrace output
